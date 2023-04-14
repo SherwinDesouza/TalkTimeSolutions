@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk Time Solutions</title>
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar ul {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline-block;
+            list-style: none;
+            margin: 2vw 1vw;
+            text-align: center;
+        }
+
+        .navbar li a {
+            padding-left: 0.5vw;
+            text-decoration: none;
+            color: black;
+            font-size: 1.5vw;
+        }
+        .NavyBlue {
+            background-color: #000C66;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Table {
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+        }
+
+        .Table tr {
+            text-align: center;
+        }
+
+        #Contact {
+            font-size: 2.6vw;
+            /* converted from 30px to vw */
+        }
+
+        #Contact::before {
+            content: "___________________________________________                      ";
+            font-size: 1.7vw;
+            position: relative;
+            bottom:1vw;
+        }
+
+        #Contact::after {
+            content: "                ___________________________________________";
+            font-size: 1.7vw;
+            position: relative;
+            bottom:1vw;
+        }
+
+        input[type=text],
+        select {
+            width: 48.6vw;
+            padding: 2.08vh 2.7vw;
+            margin: 2vh 48vw;
+            background-color: transparent;
+            border-radius: 7px;
+            border: 0.034vw solid white;
+        }
+
+        button[type=submit] {
+            width: 8.3vw;
+            background-color: white;
+            color: black;
+            padding: 2.6vw 2.7vw;
+            margin: 1.3vw 0;
+            border: none;
+            font-size: calc(0.6vw + 0.6vh);
+        }
+
+        #Message {
+            padding: 4vw;
+            width: 60vw;
+        }
+
+        #Protected {
+            text-align: center;
+            color: #cbcacae5;
+            font-size: 1.3vw;
+        }
+
+        #Protected a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #customers {
+            text-align: center;
+            color: #cbcacae5;
+            font-size: 1.7vw;
+        }
+
+        #TalkTime {
+            text-align: center;
+            color: white;
+            font-size: 3.0vw;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #details {
+            text-align: center;
+            color: #cbcacae5;
+            font-size: 1.7vw;
+        }
+
+        #details a {
+            text-decoration: none;
+            color: white;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+footer {
+            width: 100%;
+            text-align: center;
+            color: black;
+            background-color: rgb(255, 255, 255);
+            padding: 2vw;
+            font-size: 1.3vw;
+        }
+
+    </style>  
+</head>
+<body><header><a href="index.html"><img src="logo.jpg" alt="Talk Solutions" style="display: block; margin: 0 auto; max-width: 20vw"></a>
+    <nav class="navbar">
+    <ul>
+        <li><a href="index.html">
+            HOME </a>
+        </li>
+        <li><a href="AboutUs.html">
+            ABOUT US </a>
+        </li>
+        <li><a href="Services.html">
+            OUR SERVICES </a>
+        </li>
+        <li><a href="Contact.html">
+            CONTACT </a>
+        </li>
+    </ul>
+    </nav>
+</header>
+
+<div class="NavyBlue">
+        <table class="Table">
+            <tr>
+                <td>
+                    <h1 id="Contact">Contact Us</h1>
+                    <h2>We believe in what we do!</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form action="javascript:message()" method="post">
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <br>
+                        <input type="text" id="Email" name="Email" placeholder="Email*" required>
+                        <br>
+                        <input type="text" id="Message" name="Message" placeholder="Message" required>
+                        <br>
+                        <button type="submit" id="submit">Send</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="Protected">This site is protected by reCAPTCHA and the Google <a
+                            href="https://policies.google.com/privacy">Privacy Policy</a> and<a
+                            href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="customers">We love our customers, so feel free to visit during normal business hours.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3 id="TalkTime">Talk Time Solutions</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="details">Phone.<a href="tel:+1 224 830-0471"> tel:+1 224 830-0471</a> Email. <a
+                            href="info@talktimesolutions.com"> info@talktimesolutions.com</a> </p>
+                </td>
+            </tr>
+             </table>
+             </div>
+             <footer>Copyright © 2023 Talk Time Solutions - All Rights Reserved.</footer>
+</body>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    function message() {
+
+        var name = $('#name').val();
+        var email = $('#Email').val();
+        var subject = $('#Subject').val();
+        var sms = $('#Message').val();
+
+        Email.send({
+            Username: "sherwindesouza9@gmail.com",
+            Host: "smtp.elasticemail.com",
+            To: 'sherwindesouza9@gmail.com',
+            Password: "BBDDF0D5CF5FF3439CA74722B5C251C96C67",
+            From: email,
+            Subject: "New message on contact from " + name,
+            Body: sms,
+            SSL: true,
+            Port: 2525
+        }).then(
+            message => {
+                if (message == 'OK') {
+                    alert('Email Sent');
+                }
+                else {
+                    console.error(message);
+                    alert('There is error at sending message. ')
+
+                }
+
+            }
+        );
+
+
+
+    }
+    </script>
+</html>
